@@ -33,7 +33,6 @@
             line-height: 1.6;
         }
 
-        /* Arka Plan Silüet */
         body::before {
             content: "";
             position: fixed;
@@ -57,7 +56,7 @@
             padding: 25px 50px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             position: relative;
             z-index: 10;
@@ -93,6 +92,29 @@
             letter-spacing: 3px;
             color: var(--accent-gold);
             text-transform: uppercase;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--accent-gold);
+            color: var(--white);
+            padding: 5px 12px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+
+        .lang-btn.active {
+            background-color: var(--accent-gold);
+            color: var(--primary-color);
         }
 
         main {
@@ -137,12 +159,7 @@
             padding: 35px;
             border-radius: 15px;
             text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .about-container p {
-            font-size: 1.15rem;
-            color: #222;
+            margin: 0 auto 60px auto;
         }
 
         .grid-container {
@@ -164,9 +181,7 @@
             transition: transform 0.3s ease;
         }
 
-        .card-box:hover {
-            transform: translateY(-8px);
-        }
+        .card-box:hover { transform: translateY(-8px); }
 
         .card-box i {
             font-size: 2.5rem;
@@ -212,14 +227,7 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.1rem;
             z-index: 2;
-        }
-
-        .step i {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
         }
 
         .project-highlight {
@@ -232,26 +240,11 @@
             gap: 25px;
         }
 
-        .project-highlight h3 {
-            color: var(--accent-gold);
-            font-size: 1.5rem;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-            padding-bottom: 10px;
-        }
+        .project-highlight h3 { color: var(--accent-gold); border-bottom: 1px solid rgba(197, 160, 89, 0.3); padding-bottom: 10px; }
 
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
 
-        .project-item strong {
-            display: block;
-            color: var(--accent-gold);
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-        }
+        .project-item strong { display: block; color: var(--accent-gold); margin-bottom: 5px; text-transform: uppercase; font-size: 0.85rem; }
 
         .contact-card {
             background-color: var(--white);
@@ -264,71 +257,19 @@
             margin: 0 auto;
         }
 
-        .contact-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+        .contact-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+        .contact-item { display: flex; align-items: center; gap: 20px; }
+        .contact-icon { background-color: rgba(20, 40, 80, 0.08); color: var(--primary-color); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .contact-details { display: flex; flex-direction: column; text-align: left; }
+        .contact-details span.label { font-size: 0.75rem; font-weight: 700; color: #888; text-transform: uppercase; }
+        .contact-details a { color: var(--primary-color); text-decoration: none; font-weight: 600; }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .contact-icon {
-            background-color: rgba(20, 40, 80, 0.08);
-            color: var(--primary-color);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-details span.label {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: #888;
-            text-transform: uppercase;
-        }
-
-        .contact-details a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: var(--bg-color);
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: auto;
-        }
+        footer { background-color: var(--primary-color); color: var(--bg-color); text-align: center; padding: 40px 20px; margin-top: auto; }
 
         @media (max-width: 768px) {
-            .process-steps {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .step {
-                width: 100%;
-            }
-
-            .brand {
-                flex-direction: column;
-                text-align: center;
-            }
+            header { padding: 20px; flex-direction: column; gap: 20px; }
+            .process-steps { flex-direction: column; align-items: center; }
+            .brand { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -340,16 +281,19 @@
             <img src="logo.png" alt="MAR Logo">
             <div class="brand-text">
                 <h1>MAR Logistics and Trade</h1>
-                <p class="slogan">Strategy | Sourcing | Logistics</p>
+                <p class="slogan" data-key="slogan">Strategy | Sourcing | Logistics</p>
             </div>
+        </div>
+        <div class="lang-switcher">
+            <button class="lang-btn active" id="btn-en" onclick="changeLanguage('en')">EN</button>
+            <button class="lang-btn" id="btn-de" onclick="changeLanguage('de')">DE</button>
         </div>
     </header>
 
     <main>
-
         <section class="about-container">
-            <h2 class="section-title">Strategic Global Commerce</h2>
-            <p>
+            <h2 class="section-title" data-key="about_title">Strategic Global Commerce</h2>
+            <p data-key="about_desc">
                 MAR Logistics and Trade acts as a strategic bridge between Türkiye's industrial excellence and the European market.
                 Specialized in supply chain consultancy and export management, we empower international wholesalers and SMEs by identifying
                 the best production partners, ensuring quality control, and managing the logistics journey from end to end.
@@ -357,219 +301,242 @@
         </section>
 
         <section>
-            <h2 class="section-title">Core Services</h2>
-
+            <h2 class="section-title" data-key="services_title">Core Services</h2>
             <div class="grid-container">
-
                 <div class="card-box">
                     <i class="fa-solid fa-chess-knight"></i>
-                    <h4>STRATEGY</h4>
-                    <p>
-                        Market analysis and strategic planning to ensure your supply chain operates at maximum efficiency and compliance.
-                    </p>
+                    <h4 data-key="service1_h">STRATEGY</h4>
+                    <p data-key="service1_p">Market analysis and strategic planning to ensure your supply chain operates at maximum efficiency and compliance.</p>
                 </div>
-
                 <div class="card-box">
                     <i class="fa-solid fa-box-open"></i>
-                    <h4>SOURCING</h4>
-                    <p>
-                        Connecting you with top-tier manufacturers. Specialized in bridging Marmara region industrial sectors to Europe.
-                    </p>
+                    <h4 data-key="service2_h">SOURCING</h4>
+                    <p data-key="service2_p">Connecting you with top-tier manufacturers. Specialized in bridging Marmara region industrial sectors to Europe.</p>
                 </div>
-
                 <div class="card-box">
                     <i class="fa-solid fa-ship"></i>
-                    <h4>LOGISTICS</h4>
-                    <p>
-                        End-to-end operation management from factory floor to final destination, ensuring secure and timely delivery.
-                    </p>
+                    <h4 data-key="service3_h">LOGISTICS</h4>
+                    <p data-key="service3_p">End-to-end operation management from factory floor to final destination, ensuring secure and timely delivery.</p>
                 </div>
-
             </div>
         </section>
 
         <section>
-            <h2 class="section-title">Why Source from Türkiye?</h2>
-
+            <h2 class="section-title" data-key="why_title">Why Source from Türkiye?</h2>
             <div class="grid-container">
-
                 <div class="card-box" style="border-top-color: var(--primary-color);">
                     <i class="fa-solid fa-tags" style="color: var(--accent-gold);"></i>
-                    <h4>Cost-Efficiency</h4>
-                    <p>
-                        Premium manufacturing quality with highly competitive labor and production costs compared to EU standards.
-                    </p>
+                    <h4 data-key="why1_h">Cost-Efficiency</h4>
+                    <p data-key="why1_p">Premium manufacturing quality with highly competitive labor and production costs compared to EU standards.</p>
                 </div>
-
                 <div class="card-box" style="border-top-color: var(--primary-color);">
                     <i class="fa-solid fa-truck-fast" style="color: var(--accent-gold);"></i>
-                    <h4>Strategic Location</h4>
-                    <p>
-                        Short transit times to Europe (4-7 days by road), allowing for "just-in-time" supply chain management.
-                    </p>
+                    <h4 data-key="why2_h">Strategic Location</h4>
+                    <p data-key="why2_p">Short transit times to Europe (4-7 days by road), allowing for "just-in-time" supply chain management.</p>
                 </div>
-
                 <div class="card-box" style="border-top-color: var(--primary-color);">
                     <i class="fa-solid fa-layer-group" style="color: var(--accent-gold);"></i>
-                    <h4>Production Flexibility</h4>
-                    <p>
-                        Adaptable manufacturing plants capable of handling custom orders and varied production volumes (MOQs).
-                    </p>
+                    <h4 data-key="why3_h">Production Flexibility</h4>
+                    <p data-key="why3_p">Adaptable manufacturing plants capable of handling custom orders and varied production volumes (MOQs).</p>
                 </div>
-
             </div>
         </section>
 
         <section>
-            <h2 class="section-title">Our Operation Process</h2>
-
+            <h2 class="section-title" data-key="process_title">Our Operation Process</h2>
             <div class="process-steps">
-
                 <div class="step">
                     <i class="fa-solid fa-file-invoice"></i>
-                    <h4>Inquiry</h4>
-                    <p>We analyze your specific technical requirements.</p>
+                    <h4 data-key="step1_h">Inquiry</h4>
+                    <p data-key="step1_p">We analyze your specific technical requirements.</p>
                 </div>
-
                 <div class="step">
                     <i class="fa-solid fa-handshake"></i>
-                    <h4>Matching</h4>
-                    <p>Finding the ideal production partner in our network.</p>
+                    <h4 data-key="step2_h">Matching</h4>
+                    <p data-key="step2_p">Finding the ideal production partner in our network.</p>
                 </div>
-
                 <div class="step">
                     <i class="fa-solid fa-shield-check"></i>
-                    <h4>Quality Control</h4>
-                    <p>On-site inspection and production monitoring.</p>
+                    <h4 data-key="step3_h">Quality Control</h4>
+                    <p data-key="step3_p">On-site inspection and production monitoring.</p>
                 </div>
-
                 <div class="step">
                     <i class="fa-solid fa-truck-ramp-box"></i>
-                    <h4>Delivery</h4>
-                    <p>Coordinated logistics from factory to your doorstep.</p>
+                    <h4 data-key="step4_h">Delivery</h4>
+                    <p data-key="step4_p">Coordinated logistics from factory to your doorstep.</p>
                 </div>
-
             </div>
         </section>
 
         <section>
-            <h2 class="section-title">Project Spotlight</h2>
-
+            <h2 class="section-title" data-key="project_title">Project Spotlight</h2>
             <div class="project-highlight">
-
-                <h3>Case Study: Sustainable Packaging Sourcing</h3>
-
+                <h3 data-key="case_title">Case Study: Sustainable Packaging Sourcing</h3>
                 <div class="project-grid">
-
                     <div class="project-item">
-                        <strong>The Challenge</strong>
-                        <p>
-                            An EU-based wholesaler needed to reduce packaging costs by 15% while maintaining strict eco-friendly standards.
-                        </p>
+                        <strong data-key="case1_h">The Challenge</strong>
+                        <p data-key="case1_p">An EU-based wholesaler needed to reduce packaging costs by 15% while maintaining strict eco-friendly standards.</p>
                     </div>
-
                     <div class="project-item">
-                        <strong>Our Action</strong>
-                        <p>
-                            Audited 3 facilities in the Marmara region, optimized the material specs,
-                            and handled the full export documentation.
-                        </p>
+                        <strong data-key="case2_h">Our Action</strong>
+                        <p data-key="case2_p">Audited 3 facilities in the Marmara region, optimized the material specs, and handled the full export documentation.</p>
                     </div>
-
                     <div class="project-item">
-                        <strong>The Result</strong>
-                        <p>
-                            18% cost reduction achieved, ISO-certified sustainable production,
-                            and a 5-day transit time to Germany.
-                        </p>
+                        <strong data-key="case3_h">The Result</strong>
+                        <p data-key="case3_p">18% cost reduction achieved, ISO-certified sustainable production, and a 5-day transit time to Germany.</p>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT -->
         <section class="contact-card">
-
-            <h2 class="section-title" style="font-size: 1.5rem;">Contact</h2>
-
+            <h2 class="section-title" style="font-size: 1.5rem;" data-key="contact_h">Contact</h2>
             <ul class="contact-list">
-
                 <li class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-
+                    <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
                     <div class="contact-details">
-                        <span class="label">Phone</span>
+                        <span class="label" data-key="phone_l">Phone</span>
                         <a href="tel:+905389610100">+90 538 961 01 00</a>
                     </div>
                 </li>
-
                 <li class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </div>
-
+                    <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
                     <div class="contact-details">
-                        <span class="label">Professional Profile</span>
-                        <a href="https://www.linkedin.com/in/yunus-emre-k%C4%B1z%C4%B1llarl%C4%B1-b92491339" target="_blank">
-                            Connect on LinkedIn
-                        </a>
+                        <span class="label" data-key="linkedin_l">Professional Profile</span>
+                        <a href="https://www.linkedin.com/in/yunus-emre-k%C4%B1z%C4%B1llarl%C4%B1-b92491339" target="_blank">Connect on LinkedIn</a>
                     </div>
                 </li>
-
             </ul>
-
         </section>
-
     </main>
 
     <footer>
-        <p>&copy; 2026 MAR Logistics and Trade. All rights reserved.</p>
-
+        <p>&copy; 2026 MAR Logistics and Trade. <span data-key="rights">All rights reserved.</span></p>
         <details style="max-width: 600px; margin: 20px auto 0; cursor: pointer;">
-
             <summary style="color: var(--accent-gold); font-weight: 600; font-size: 0.8rem; list-style: none; text-transform: uppercase; letter-spacing: 1px;">
-                Imprint (Impressum)
-                <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+                Imprint (Impressum) <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
             </summary>
-
             <div style="margin-top: 20px; padding: 20px; text-align: left; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(197, 160, 89, 0.1);">
-
                 <p style="font-size: 0.85rem; color: #d0d0d0;">
-
                     <strong style="color: var(--white);">MAR Logistics and Trade</strong><br>
-
-                    <strong>Represented by:</strong>
-                    Yunus Emre Kızıllarlı<br>
-
-                    <strong>Address:</strong>
-                    Paşaalanı Mah. Cumhuriyet Caddesi No:129/3 Karesi/Balıkesir, Türkiye
-                    <br><br>
-
-                    <strong>Contact:</strong><br>
-
+                    <strong data-key="rep">Represented by:</strong> Yunus Emre Kızıllarlı<br>
+                    <strong data-key="addr">Address:</strong> Paşaalanı Mah. Cumhuriyet Caddesi No:129/3 Karesi/Balıkesir, Türkiye<br><br>
+                    <strong data-key="contact_det">Contact:</strong><br>
                     Phone: (+90) 538 961 01 00<br>
-
                     Email: yunus@mar-lt.com.tr
-
                 </p>
-
             </div>
-
         </details>
     </footer>
 
-    <style>
-        details summary::-webkit-details-marker {
-            display: none;
+    <script>
+        const translations = {
+            en: {
+                slogan: "Strategy | Sourcing | Logistics",
+                about_title: "Strategic Global Commerce",
+                about_desc: "MAR Logistics and Trade acts as a strategic bridge between Türkiye's industrial excellence and the European market. Specialized in supply chain consultancy and export management, we empower international wholesalers and SMEs by identifying the best production partners, ensuring quality control, and managing the logistics journey from end to end.",
+                services_title: "Core Services",
+                service1_h: "STRATEGY",
+                service1_p: "Market analysis and strategic planning to ensure your supply chain operates at maximum efficiency and compliance.",
+                service2_h: "SOURCING",
+                service2_p: "Connecting you with top-tier manufacturers. Specialized in bridging Marmara region industrial sectors to Europe.",
+                service3_h: "LOGISTICS",
+                service3_p: "End-to-end operation management from factory floor to final destination, ensuring secure and timely delivery.",
+                why_title: "Why Source from Türkiye?",
+                why1_h: "Cost-Efficiency",
+                why1_p: "Premium manufacturing quality with highly competitive labor and production costs compared to EU standards.",
+                why2_h: "Strategic Location",
+                why2_p: "Short transit times to Europe (4-7 days by road), allowing for 'just-in-time' supply chain management.",
+                why3_h: "Production Flexibility",
+                why3_p: "Adaptable manufacturing plants capable of handling custom orders and varied production volumes (MOQs).",
+                process_title: "Our Operation Process",
+                step1_h: "Inquiry",
+                step1_p: "We analyze your specific technical requirements.",
+                step2_h: "Matching",
+                step2_p: "Finding the ideal production partner in our network.",
+                step3_h: "Quality Control",
+                step3_p: "On-site inspection and production monitoring.",
+                step4_h: "Delivery",
+                step4_p: "Coordinated logistics from factory to your doorstep.",
+                project_title: "Project Spotlight",
+                case_title: "Case Study: Sustainable Packaging Sourcing",
+                case1_h: "The Challenge",
+                case1_p: "An EU-based wholesaler needed to reduce packaging costs by 15% while maintaining strict eco-friendly standards.",
+                case2_h: "Our Action",
+                case2_p: "Audited 3 facilities in the Marmara region, optimized the material specs, and handled the full export documentation.",
+                case3_h: "The Result",
+                case3_p: "18% cost reduction achieved, ISO-certified sustainable production, and a 5-day transit time to Germany.",
+                contact_h: "Contact",
+                phone_l: "Phone",
+                linkedin_l: "Professional Profile",
+                rights: "All rights reserved.",
+                rep: "Represented by:",
+                addr: "Address:",
+                contact_det: "Contact:"
+            },
+            de: {
+                slogan: "Strategie | Beschaffung | Logistik",
+                about_title: "Strategischer Welthandel",
+                about_desc: "MAR Logistics and Trade agiert als strategische Brücke zwischen der industriellen Exzellenz der Türkei und dem europäischen Markt. Spezialisiert auf Supply-Chain-Beratung und Exportmanagement unterstützen wir internationale Großhändler und KMUs dabei, die optimalen Produktionspartner zu finden, die Qualitätskontrolle zu sichern und die gesamte Logistik effizient zu steuern.",
+                services_title: "Kernleistungen",
+                service1_h: "STRATEGIE",
+                service1_p: "Marktanalyse und strategische Planung für eine hocheffiziente und gesetzeskonforme Lieferkette.",
+                service2_h: "BESCHAFFUNG",
+                service2_p: "Direkter Zugang zu erstklassigen Herstellern. Spezialisiert auf die Anbindung der Industriesektoren der Marmara-Region an Europa.",
+                service3_h: "LOGISTIK",
+                service3_p: "Ganzheitliches operatives Management von der Produktion bis zum Zielort für eine sichere und termingerechte Lieferung.",
+                why_title: "Warum die Türkei als Beschaffungsmarkt?",
+                why1_h: "Kosteneffizienz",
+                why1_p: "Erstklassige Fertigungsqualität bei äußerst wettbewerbsfähigen Produktionskosten im Vergleich zu EU-Standards.",
+                why2_h: "Strategische Lage",
+                why2_p: "Kurze Transportwege nach Europa (4-7 Tage per LKW), ideal für Just-in-Time-Lieferketten.",
+                why3_h: "Produktionsflexibilität",
+                why3_p: "Anpassungsfähige Werke, die sowohl maßgeschneiderte Aufträge als auch variable Mengen (MOQs) effizient bearbeiten.",
+                process_title: "Unser Arbeitsprozess",
+                step1_h: "Anfrage",
+                step1_p: "Detaillierte Analyse Ihrer spezifischen technischen Anforderungen.",
+                step2_h: "Matching",
+                step2_p: "Identifikation des idealen Produktionspartners in unserem Netzwerk.",
+                step3_h: "Qualitätskontrolle",
+                step3_p: "Inspektionen vor Ort und kontinuierliche Produktionsüberwachung.",
+                step4_h: "Lieferung",
+                step4_p: "Koordinierte Logistik von der Fabrik bis vor Ihre Haustür.",
+                project_title: "Projekt im Fokus",
+                case_title: "Fallstudie: Nachhaltige Verpackungsbeschaffung",
+                case1_h: "Herausforderung",
+                case1_p: "Ein EU-Großhändler suchte eine Kostensenkung von 15 % bei gleichzeitiger Einhaltung strenger Umweltstandards.",
+                case2_h: "Unsere Maßnahmen",
+                case2_p: "Audit von 3 Werken in der Türkei, Materialoptimierung und Abwicklung der Exportdokumentation.",
+                case3_h: "Das Ergebnis",
+                case3_p: "18 % Kostenersparnis, ISO-zertifizierte Produktion und nur 5 Tage Lieferzeit nach Deutschland.",
+                contact_h: "Kontakt",
+                phone_l: "Telefon",
+                linkedin_l: "Berufliches Profil",
+                rights: "Alle Rechte vorbehalten.",
+                rep: "Vertreten durch:",
+                addr: "Adresse:",
+                contact_det: "Kontakt:"
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[lang][key]) {
+                    el.innerText = translations[lang][key];
+                }
+            });
+            localStorage.setItem('selectedLanguage', lang);
         }
 
-        details[open] summary i {
-            transform: rotate(180deg);
-        }
-    </style>
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+            changeLanguage(savedLang);
+        });
+    </script>
 
 </body>
 </html>
